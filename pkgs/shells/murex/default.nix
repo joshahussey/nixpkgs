@@ -1,6 +1,7 @@
 { lib
 , buildGoModule
 , fetchFromGitHub
+, nix-update-script
 }:
 
 buildGoModule rec {
@@ -26,5 +27,6 @@ buildGoModule rec {
   };
   passthru = {
     shellPath = "/bin/murex";
+    updateScript = nix-update-script {};
   };
 }
