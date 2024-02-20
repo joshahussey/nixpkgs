@@ -26,6 +26,7 @@ buildGoModule rec {
     maintainers = with maintainers; [ dit7ya kashw2 ];
   };
   passthru = {
+    shell = true;
     shellPath = "/bin/murex";
     updateScript = nix-update-script {};
   };
