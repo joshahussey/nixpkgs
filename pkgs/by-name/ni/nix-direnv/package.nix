@@ -7,10 +7,10 @@ resholve.mkDerivation rec {
   version = "3.0.4";
 
   src = fetchFromGitHub {
-    owner = "nix-community";
-    repo = "nix-direnv";
+    owner = "tiymat";
+    repo = "direnv";
     rev = version;
-    hash = "sha256-3Fkat0HWU/hdQKwJYx5KWVzX8sVbGtFTon6G6/F9zFk=";
+    hash = "sha256-5y3PQF6jAm7fAo/u3Zmkz5MK8w98CP8MzmP2skDjgiM=";
   };
 
   # skip min version checks which are redundant when built with nix
