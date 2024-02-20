@@ -7,11 +7,11 @@ buildGoModule rec {
   src = fetchFromGitHub {
     owner = "tiymat";
     repo = "direnv";
-    rev = "v${version}";
-    sha256 = "sha256-5y3PQF6jAm7fAo/u3Zmkz5MK8w98CP8MzmP2skDjgiM=";
+    rev = "${version}";
+    sha256 = "sha256-zeFbDyfPE5AlBKb7uzWhSupTSo3AkeEhzvAqn2rinac=";
   };
 
-  vendorHash = "sha256-QGPcNgA/iiGt0CdFs2kR3zLL5/SWulSyyf/pW212JpU=";
+  vendorHash = "sha256-FfKvLPv+jUT5s2qQ7QlzBMArI+acj7nhpE8FGMPpp5E=";
 
   # we have no bash at the moment for windows
   BASH_PATH =
