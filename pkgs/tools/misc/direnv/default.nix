@@ -5,10 +5,11 @@ buildGoModule rec {
   version = "2.33.0";
 
   src = fetchFromGitHub {
-    owner = "direnv";
+    owner = "tiymat";
     repo = "direnv";
+    branch = "murex-support";
     rev = "v${version}";
-    sha256 = "sha256-/xOqJ3dr+3S502rXHVBcHhgBCctoMYnWpfLqgrxIoN8=";
+    sha256 = "sha256-5y3PQF6jAm7fAo/u3Zmkz5MK8w98CP8MzmP2skDjgiM=";
   };
 
   vendorHash = "sha256-QGPcNgA/iiGt0CdFs2kR3zLL5/SWulSyyf/pW212JpU=";
