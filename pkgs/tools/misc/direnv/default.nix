@@ -2,12 +2,11 @@
 
 buildGoModule rec {
   pname = "direnv";
-  version = "2.33.0";
+  version = "20af177601753759d38d6af9990e2a954e5721e9";
 
   src = fetchFromGitHub {
     owner = "tiymat";
     repo = "direnv";
-    branch = "murex-support";
     rev = "v${version}";
     sha256 = "sha256-5y3PQF6jAm7fAo/u3Zmkz5MK8w98CP8MzmP2skDjgiM=";
   };
