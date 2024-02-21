@@ -8,12 +8,12 @@ buildGoModule rec {
     owner = "tiymat";
     repo = "direnv";
     rev = "${version}";
-    sha256 = "sha256-zeFbDyfPE5AlBKb7uzWhSupTSo3AkeEhzvAqn2rinac=";
+    sha256 = "2d28157b55d7069b01ed83ccbd11b72570a14df8" ;
   };
 
   vendorHash = "sha256-FfKvLPv+jUT5s2qQ7QlzBMArI+acj7nhpE8FGMPpp5E=";
 
-  # we have no bash at the moment for windows
+  # we have no bashat the moment for windows
   BASH_PATH =
     lib.optionalString (!stdenv.hostPlatform.isWindows)
     "${bash}/bin/bash";
