@@ -8,7 +8,7 @@ buildGoModule rec {
     owner = "tiymat";
     repo = "direnv";
     rev = "${version}";
-    sha256 = "2d28157b55d7069b01ed83ccbd11b72570a14df8" ;
+    sha256 = lib.fakeHash ;
   };
 
   vendorHash = "sha256-FfKvLPv+jUT5s2qQ7QlzBMArI+acj7nhpE8FGMPpp5E=";
