@@ -1609,6 +1609,32 @@ buildLuarocksPackage {
   };
 }) {};
 
+lua-xmlreader = callPackage({ fetchFromGitHub, fetchurl, libxml2, lua5_1, buildLuarocksPackage }:
+buildLuarocksPackage {
+    pname = "lua-xmlreader";
+    version = "192491f085c38f719b72f41eee55e6ef2d4a99c6";
+    knownRockspec = (fetchurl {
+      url = "mirror://luarocks/lua-xmlreader-0.1-2.rockspec";
+      hash = "sha256-ueZYpApYdty3GR0KVqQpiu9TwlvJPDcMW8RkWrQ1RQY=";
+    }).outPath;
+    src = fetchFromGitHub {
+      sha256 = "09083mj45hmqxlpg4k0h89yb2s9ma322prj9c09kwjaxvgyjyf17";
+      rev = "192491f085c38f719b72f41eee55e6ef2d4a99c6";
+      repo = "lua-xmlreader";
+      owner = "LuaDist";
+    };
+    propagatedBuildInputs = [ lua5_1 libxml2.dev ];
+    nativeBuildInputs = [ libxml2 ];
+    extraVariables.LIBXML2_DIR="${libxml2.out}";
+    extraVariables.LIBXML2_INCDIR="${libxml2.dev}/include";
+    meta = with lib; {
+      inherit (src.meta) homepage;
+      description = "XMLReader";
+      license.fullName = "MIT/X11";
+    };
+  }
+) {};
+
 lua-yajl = callPackage({ buildLuarocksPackage, fetchgit, fetchurl, lua, luaOlder }:
 buildLuarocksPackage {
   pname = "lua-yajl";
