@@ -32,6 +32,7 @@
 , libuv
 , libxcrypt
 , libyaml
+, libxml2
 , luajitPackages
 , mariadb
 , magic-enum
@@ -675,6 +676,8 @@ with prev;
     '';
   });
 
+  lua-xmlreader = prev.lua-xmlreader.overrideAttrs (_: {
+  });
 
   # aliases
   cjson = prev.lua-cjson;

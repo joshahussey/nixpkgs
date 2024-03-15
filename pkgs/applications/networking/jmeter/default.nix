@@ -8,6 +8,10 @@ stdenv.mkDerivation rec {
     sha256 = "sha256-9o78F/4GD2mMSKar4lmakzknSGvaKSTb4Ux0iVMY3d4=";
   };
 
+  plugin-manager = fetchurl {
+    url = "https://archive.apache.org/dist/jmeter/binaries/ApacheJMeter_plugins-Standard-1.6.0.zip";
+    sha256 = "sha256-9o78F/4GD2mMSKar4lmakzknSGvaKSTb4Ux0iVMY3d4=";
+  };
   nativeBuildInputs = [ makeWrapper jre ];
 
   installPhase = ''
@@ -16,6 +20,7 @@ stdenv.mkDerivation rec {
     rm bin/*.bat bin/*.cmd
 
     cp -R * $out/
+    cp -R $plugin-manager $out/lib/ext
 
     substituteInPlace $out/bin/create-rmi-keystore.sh --replace \
       "keytool -genkey" \
