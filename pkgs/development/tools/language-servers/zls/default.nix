@@ -7,7 +7,7 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "zls";
-  version = "0.11.0";
+  version = "master";
 
   src = fetchFromGitHub {
     owner = "zigtools";
